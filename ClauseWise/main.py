@@ -107,7 +107,7 @@ class FreeTextAnalyzer:
             return "Employment Contract"
         elif any(word in text_lower for word in ['nda', 'confidentiality', 'non-disclosure']):
             return "Non-Disclosure Agreement"
-        elif any(word in text_lower for word in ['service', 'services', 'provider', 'client']):
+        elif any(word in text_lower for word in ['ser e', 'services', 'provider', 'client']):
             return "Service Agreement"
         elif any(word in text_lower for word in ['purchase', 'sale', 'buy', 'sell', 'goods']):
             return "Purchase/Sale Agreement"
