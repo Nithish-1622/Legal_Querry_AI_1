@@ -1,31 +1,11 @@
-# ==========================================
-# ClauseWise - Legal Document Analyzer API
-# Python Dependencies
-# ==========================================
-
 # Core Web Framework
 fastapi==0.109.0
 uvicorn[standard]==0.27.0
-pydantic==2.6.0
-pydantic-core==2.16.1
-
+pydantic==2.9.2
 # Environment Variables
 python-dotenv==1.0.0
-
 # CORS Support
 python-multipart==0.0.9
-
 # Document Processing
 PyPDF2==3.0.1
 python-docx==1.1.0
-
-# Standard Libraries (included in Python, listed for documentation)
-# - tempfile
-# - os
-# - uuid
-# - io
-# - typing
-# - datetime
-# - json
-# - logging
-# - re

@@ -2,6 +2,8 @@
 
 A comprehensive legal intelligence system that leverages RAG (Retrieval-Augmented Generation) technology to provide dual-perspective legal analysis, document processing, and intelligent query handling.
 
+> **🚀 Ready to deploy?** Check out our [Deployment Guide](./DEPLOYMENT.md) for step-by-step instructions on deploying to Vercel and Render!
+
 ## 📋 Table of Contents
 
 - [Features](#features)
@@ -12,6 +14,7 @@ A comprehensive legal intelligence system that leverages RAG (Retrieval-Augmente
   - [Frontend Setup](#frontend-setup)
 - [Configuration](#configuration)
 - [Running the Application](#running-the-application)
+- [Deployment](#deployment)
 - [Project Structure](#project-structure)
 - [Troubleshooting](#troubleshooting)
 
@@ -249,7 +252,37 @@ This creates an optimized production build in the `dist` folder.
 npm run preview
 ```
 
-## 📁 Project Structure
+## � Deployment
+
+Ready to deploy your Legal Query AI to production? We've got you covered!
+
+### Quick Deploy
+
+- **Backend** → Deploy to [Render](https://render.com/) (Free tier available)
+- **Frontend** → Deploy to [Vercel](https://vercel.com/) or [Netlify](https://netlify.com/) (Free tier available)
+
+### 📚 Deployment Resources
+
+- **[Complete Deployment Guide](./DEPLOYMENT.md)** - Detailed step-by-step instructions
+- **[Deployment Checklist](./DEPLOYMENT_CHECKLIST.md)** - Quick checklist to ensure nothing is missed
+
+### Essential Files Created
+
+- `.env.example` - Frontend environment variables template
+- `.env.production.example` - Production environment template
+- `render.yaml` - Backend deployment configuration for Render
+- `vercel.json` - Frontend deployment configuration for Vercel
+- `netlify.toml` - Frontend deployment configuration for Netlify
+
+### Quick Setup
+
+1. **Backend** - Deploy to Render with one click using `render.yaml`
+2. **Frontend** - Deploy to Vercel/Netlify and set `VITE_API_BASE_URL` environment variable
+3. **Update CORS** - Add your frontend URL to backend's `ALLOWED_ORIGINS`
+
+**See [DEPLOYMENT.md](./DEPLOYMENT.md) for complete instructions!**
+
+## �📁 Project Structure
 
 ```
 Legal_Querry_AI_1/
