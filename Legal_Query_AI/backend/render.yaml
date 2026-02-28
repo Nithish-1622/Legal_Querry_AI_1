@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: legal-query-backend
+    env: python
+    region: oregon
+    plan: free
+    # Runtime configuration
+    runtime: python
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+    startCommand: uvicorn main1:app --host 0.0.0.0 --port $PORT
+    # Environment variables
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: GROQ_API_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: PIP_NO_CACHE_DIR
+        value: 1
+    # Health check
+    healthCheckPath: /health

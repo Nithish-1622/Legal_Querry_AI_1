@@ -1,6 +1,29 @@
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-python-dotenv==1.0.0
-requests==2.31.0
-pydantic==2.5.0
+# FastAPI and Server
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
 python-multipart==0.0.6
+
+# Environment and Config
+python-dotenv==1.0.0
+
+# HTTP Requests
+requests==2.31.0
+
+# Data Validation - Updated for Python 3.11+ compatibility
+pydantic==2.6.0
+pydantic-core==2.16.1
+
+# LangChain and AI
+langchain-community
+langchain-groq
+langchain-huggingface
+
+# Vector Database
+faiss-cpu
+
+# NLP and Embeddings
+sentence-transformers
+
+# Document Processing
+PyPDF2
+python-docx

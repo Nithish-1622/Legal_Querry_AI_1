@@ -60,10 +60,17 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Legal Query AI", version="1.0.0", lifespan=lifespan)
 
-# Add CORS middleware
+# Configure CORS - Allow all origins in development, specific origins in production
+# Set ALLOWED_ORIGINS in .env for production (comma-separated)
+allowed_origins = os.getenv("ALLOWED_ORIGINS", "*")
+if allowed_origins == "*":
+    origins = ["*"]
+else:
+    origins = [origin.strip() for origin in allowed_origins.split(",")]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -543,4 +550,6 @@ async def query_legal_advice(req: QueryRequest):
         raise HTTPException(status_code=500, detail=f"Error processing query: {str(e)}")
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8003)
+    # Use PORT from environment variable (for Render deployment) or default to 8003
+    port = int(os.getenv("PORT", 8003))
+    uvicorn.run(app, host="0.0.0.0", port=port)

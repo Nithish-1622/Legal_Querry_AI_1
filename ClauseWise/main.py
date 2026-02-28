@@ -12,6 +12,10 @@ from datetime import datetime
 import json
 import logging
 import re
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -19,10 +23,11 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI(title="Legal Document Analyzer", version="1.0.0")
 
-# Configure CORS
+# Configure CORS with environment variable support
+allowed_origins = os.getenv("ALLOWED_ORIGINS", "*").split(",")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -586,4 +591,5 @@ async def root():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8002)
+    port = int(os.getenv("PORT", 8002))
+    uvicorn.run(app, host="0.0.0.0", port=port)
